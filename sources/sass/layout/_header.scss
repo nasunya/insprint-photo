@@ -1,0 +1,80 @@
+// //HEADER LAYOUT
+// .header {
+// 	&__container {
+
+// 		padding-top: 23px;
+// 		padding-bottom: 28px;
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: space-between;
+// 	}
+
+// 	&__logo {
+// 		display: block;
+// 		width: 250px;
+
+// 		img {
+// 			max-width: 100%;
+// 			vertical-align: middle;
+// 		}
+// 	}
+
+// 	&__col {
+// 		display: flex;
+// 		align-items: center;
+// 		margin-top: 24px;
+// 	}
+
+// 	&__info-link {
+
+// 		text-decoration: none;
+// 		color: $text;
+// 		margin-left: 35px;
+// 		white-space: nowrap;
+
+// 		@media only screen and (max-width: 990px) {
+// 			margin-left: 10px;
+// 		}
+
+// 		&-icon {
+// 			display: inline-block;
+// 			vertical-align: middle;
+// 			width: 45px;
+// 			height: 45px;
+// 			border-radius: 50%;
+// 			position: relative;
+// 			background: $grey;
+// 			margin-right: 10px;
+
+// 			@media only screen and (max-width: 990px) {
+// 				margin-right: 0px;
+// 			}
+
+// 			svg {
+// 				fill: $text;
+// 				position: absolute;
+// 				left: 50%;
+// 				top: 50%;
+// 				transform: translate(-50%, -50%);
+// 			}
+// 		}
+
+// 		&-text {
+// 			display: inline-block;
+// 			vertical-align: middle;
+
+// 			@media only screen and (max-width: 990px) {
+// 				display: none;
+// 			}
+// 		}
+
+// 		&:hover {
+// 			color: $extra;
+// 		}
+// 	}
+
+// 	&__search-widget {
+// 		width: 220px;
+// 		margin-left: 25px;
+// 	}
+// }
