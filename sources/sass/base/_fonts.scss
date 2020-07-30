@@ -1,8 +1,24 @@
 //Fonts
 @font-face {
-    font-family: 'TTTravels-Black';
-    src: url('../fonts/TTTravels-Black.woff') format('woff'),
-    url('../fonts/TTTravels-Black.woff2') format('woff2');
+    font-family: 'gilroy-regular';
+    src: url('../fonts/gilroy-regular-webfont.woff') format('woff'),
+        url('../fonts/gilroy-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-medium';
+    src: url('../fonts/gilroy-medium-webfont.woff') format('woff'),
+        url('../fonts/gilroy-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-bold';
+    src: url('../fonts/gilroy-semibold-webfont.woff') format('woff'),
+        url('../fonts/gilroy-semibold-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }

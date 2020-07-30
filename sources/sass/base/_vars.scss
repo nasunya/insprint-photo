@@ -1,5 +1,7 @@
 //Vars
-$f_base: 'Roboto', sans-serif;
+$f_base: 'Roboto',
+sans-serif;
+$f_family: "gilroy-regular";
 
 //Breakpoint
 $breakpointDisplay: 'screen and (max-width: 1439px)';
@@ -7,9 +9,11 @@ $breakpointTablet: 'screen and (max-width: 1023px)';
 $breakpointMobile: 'screen and (max-width: 767px)';
 
 //Colors
-$extra: #a11a26;
+$extra: #496ADC;
+$white: #fff;
 
-$grey: #e4e4e4;
+$grey: rgba(0, 0, 0, 0.6);
+;
 $greyDark: #b9b9b9;
 $greyLight: #ececec;
 
