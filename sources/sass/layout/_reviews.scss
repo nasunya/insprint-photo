@@ -1,0 +1,65 @@
+.reviews {
+
+  &__desc {
+    text-align: center;
+    margin: 24px 0px 80px 0px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+
+    :nth-child(3) {
+      margin-right: 0px;
+    }
+  }
+
+  &__item {
+    width: 33.3%;
+    margin-right: 53px;
+  }
+
+  &__block {
+    box-shadow: $box;
+    border-radius: 16px;
+    margin-bottom: 32px;
+
+    span {
+      font-weight: 500;
+      font-size: 24px;
+      padding: 32px;
+      display: block;
+    }
+  }
+
+  &__name {
+    display: flex;
+  }
+
+  &__img {
+    margin-left: 32px;
+    margin-right: 16px;
+  }
+
+  &__name-people {
+    span {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 15px;
+      color: $grey;
+    }
+  }
+}
+
+.photo__bg {
+  background: url(../img/sectionbg.jpg) center center / cover no-repeat;
+  height: 738px;
+  max-width: 100%;
+
+}

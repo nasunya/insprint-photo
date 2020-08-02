@@ -1,0 +1,124 @@
+.photo {
+
+  &__desc {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+
+    :nth-child(1) {
+      margin-left: 0px;
+    }
+  }
+
+  &__item {
+    margin-left: 29px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $box;
+    border-radius: 16px;
+
+
+  }
+
+  &__name {
+    padding: 32px;
+    position: relative;
+
+    span {
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      color: $grey;
+    }
+  }
+
+  &__item-one {
+    display: flex;
+
+    :nth-child(1) {
+      background: url(../img/sheet.jpg) center center / cover no-repeat;
+      height: 240px;
+      width: 240px;
+    }
+
+    :nth-child(2) :nth-child(1) {
+      background: url(../img/deesh.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+
+    }
+
+    :nth-child(2) :nth-child(2) {
+      background: url(../img/child.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+    }
+  }
+
+  &__item-two {
+    display: flex;
+
+
+    :nth-child(1) {
+      background: url(../img/comp.jpg) center center / cover no-repeat;
+      height: 240px;
+      width: 240px;
+    }
+
+    :nth-child(2) :nth-child(1) {
+      background: url(../img/arch.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+    }
+
+    :nth-child(2) :nth-child(2) {
+      background: url(../img/town.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+    }
+  }
+
+  &__item-three {
+    display: flex;
+
+    :nth-child(1) {
+      background: url(../img/car.jpg) center center / cover no-repeat;
+      height: 240px;
+      width: 240px;
+    }
+
+    :nth-child(2) :nth-child(1) {
+      background: url(../img/bas.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+    }
+
+    :nth-child(2) :nth-child(2) {
+      background: url(../img/sea.jpg) center center / cover no-repeat;
+      height: 120px;
+      width: 118px;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    top: -63px;
+
+    img {
+      width: 80px;
+      border: 3px solid #fff;
+      border-radius: 100%;
+    }
+  }
+
+}

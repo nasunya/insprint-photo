@@ -23,6 +23,13 @@
     color: $grey;
   }
 
+  &__link {
+    &:hover {
+      color: $extra;
+      transition: .5s;
+    }
+  }
+
 }
 
 .track {

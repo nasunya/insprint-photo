@@ -1,0 +1,62 @@
+.title--white {
+  color: $white;
+  margin-bottom: 64px;
+}
+
+.advant {
+  background-color: $extra;
+
+  &__desc {
+    width: 100%;
+    display: flex;
+  }
+
+  &__col {
+    width: 50%;
+    min-height: 280px;
+    border-radius: 16px;
+
+  }
+
+  &__left {
+    background: url(../img/advantleft.jpg) center center / cover no-repeat;
+    margin-right: 16px;
+  }
+
+  &__right {
+    background-color: $beige-yellow;
+    margin-left: 16px;
+    position: relative;
+    min-height: 280px;
+    border-radius: 16px;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top-right-radius: 16px;
+      z-index: 100;
+    }
+
+  }
+
+  &__name {
+    padding: 32px 0px 0px 32px;
+    z-index: 1000;
+    position: relative;
+
+
+    p {
+      font-weight: 600;
+      font-size: 32px;
+      z-index: 1000;
+      position: relative;
+    }
+
+    a {
+      color: $extra;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
