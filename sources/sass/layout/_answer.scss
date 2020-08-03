@@ -11,13 +11,14 @@
   }
 
   &__acco-question {
-    padding: 26px 80px 26px 32px;
+    padding: 26px 39px 26px 32px;
     display: block;
     font-weight: 600;
     font-size: 24px;
     color: $black;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
 

@@ -32,22 +32,42 @@
 
 }
 
-.track {
+.search {
   display: flex;
-  cursor: pointer;
 
   span {
+    color: $extra;
     font-weight: 600;
     font-size: 18px;
-    color: $extra;
   }
 
-  &__picture {
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 12px;
     display: flex;
     align-items: center;
-  }
 
-  &__img {
-    width: 15px;
+    div {
+      width: 14px;
+      height: 14px;
+      border-color: #fff;
+      border: 2px solid #496ADC;
+      border-radius: 100%;
+
+      &:before {
+        content: "";
+        height: 2px;
+        width: 7px;
+        background-color: #496ADC;
+        display: inline-block;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 16px;
+        left: 11px;
+      }
+    }
   }
 }

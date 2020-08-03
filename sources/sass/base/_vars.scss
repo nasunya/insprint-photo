@@ -1,18 +1,18 @@
 //Vars
-$f_base: 'Roboto',
-sans-serif;
+$f_base: "Roboto", sans-serif;
 $f_family: "gilroy-regular";
 
 //Breakpoint
-$breakpointDisplay: 'screen and (max-width: 1439px)';
-$breakpointTablet: 'screen and (max-width: 1023px)';
-$breakpointMobile: 'screen and (max-width: 767px)';
+$breakpointDisplay: "screen and (max-width: 1439px)";
+$breakpointTablet: "screen and (max-width: 1023px)";
+$breakpointMobile: "screen and (max-width: 767px)";
 
 //Colors
-$extra: #496ADC;
+$extra: #496adc;
 $white: #fff;
-$beige: #FFF8EE;
-$beige-yellow: #FAD192;
+$beige: #fff8ee;
+$white-light: #fafafb;
+$beige-yellow: #fad192;
 $grey-light: rgba(0, 0, 0, 0.08);
 $black: #000;
 $grey: rgba(0, 0, 0, 0.4);

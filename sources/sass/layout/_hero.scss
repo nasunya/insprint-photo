@@ -62,12 +62,17 @@
       align-items: center;
 
       :nth-child(1) {
-        margin-bottom: 16px
+        margin-bottom: 16px;
       }
     }
 
     :nth-child(3) {
       margin-right: 16px;
+      margin-bottom: -3px;
+    }
+
+    :nth-child(1) {
+      margin-bottom: -3px;
     }
   }
 

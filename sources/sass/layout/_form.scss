@@ -23,11 +23,18 @@
     button {
       border-radius: 8px;
       cursor: pointer;
-      background: #496ADC;
+      background: $extra;
       width: 100%;
       padding: 20px 28px;
-      color: #fff;
+      color: $white;
       margin-bottom: 24px;
+
+      &:hover {
+        background: $white;
+        color: $extra;
+        box-shadow: $box;
+        transition: .5s;
+      }
     }
   }
 
@@ -46,7 +53,20 @@
     a {
       color: $extra;
       cursor: pointer;
+
+      &:hover {
+        color: $black;
+      }
     }
   }
 
+}
+
+
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+select,
+textarea {
+  outline-color: $extra;
 }
