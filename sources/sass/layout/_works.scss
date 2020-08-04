@@ -65,16 +65,20 @@
     align-items: center;
     width: 33.3%;
     text-align: center;
+    margin-right: 28px;
+    margin-left: 28px;
 
     span {
       font-weight: 600;
       font-size: 24px;
+      font-family: 'gilroy-semibold';
+      margin-bottom: 8px;
     }
 
     p {
       font-weight: 500;
       font-size: 18px;
-      color: $grey;
+      color: $black-light;
     }
   }
 

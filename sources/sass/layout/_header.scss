@@ -20,7 +20,7 @@
     margin-right: 12px;
     font-weight: 500;
     font-size: 18px;
-    color: $grey;
+    color: $black-light;
   }
 
   &__link {
@@ -39,6 +39,7 @@
     color: $extra;
     font-weight: 600;
     font-size: 18px;
+    font-family: 'gilroy-semibold';
   }
 
   &__icon {
@@ -53,15 +54,15 @@
     div {
       width: 14px;
       height: 14px;
-      border-color: #fff;
-      border: 2px solid #496ADC;
+      border-color: $white;
+      border: 2px solid $extra;
       border-radius: 100%;
 
       &:before {
         content: "";
         height: 2px;
         width: 7px;
-        background-color: #496ADC;
+        background-color: $extra;
         display: inline-block;
         transform: rotate(45deg);
         position: absolute;

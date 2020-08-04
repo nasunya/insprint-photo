@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'gilroy-semibold';
   }
 
 
@@ -62,4 +63,8 @@
     }
 
   }
+}
+
+.answer__acco-info {
+  display: none;
 }

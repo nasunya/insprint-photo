@@ -5,6 +5,7 @@
     margin: 24px 0px 80px 0px;
     font-size: 24px;
     font-weight: 500;
+    color: $black-light;
   }
 
   &__list {
@@ -47,12 +48,13 @@
     span {
       font-weight: 600;
       font-size: 18px;
+      font-family: 'gilroy-semibold';
     }
 
     p {
       font-weight: 500;
       font-size: 15px;
-      color: $grey;
+      color: $black-light
     }
   }
 }

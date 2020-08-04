@@ -12,13 +12,14 @@
       padding: 124px 0px 24px 0px;
       font-weight: 600;
       font-size: 48px;
+      font-family: 'gilroy-semibold';
     }
 
     p {
       margin-bottom: 40px;
       font-weight: 500;
       font-size: 24px;
-      color: $grey;
+      color: $black-light;
     }
   }
 
@@ -47,6 +48,7 @@
   &__picture {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &__wrap--flex {
