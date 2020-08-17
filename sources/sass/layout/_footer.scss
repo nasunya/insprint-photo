@@ -63,8 +63,7 @@
     margin-right: 0px;
   }
 
-
-  &__item:before {
+  &__link:before {
     content: "";
     width: 56px;
     height: 56px;
@@ -72,9 +71,12 @@
     display: inline-block;
     border-radius: 100%;
 
+    &:hover {
+      background-color: $extra;
+    }
   }
 
-  &__item {
+  &__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,4 +87,12 @@
     }
   }
 
+  &__link-item {
+    fill: $extra;
+
+    &:hover {
+      fill: $black;
+
+    }
+  }
 }

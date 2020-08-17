@@ -4,7 +4,6 @@
   padding-top: 40px;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .nav {
@@ -29,11 +28,12 @@
       transition: .5s;
     }
   }
-
 }
 
 .search {
   display: flex;
+  cursor: pointer;
+  align-items: baseline;
 
   span {
     color: $extra;
@@ -43,32 +43,25 @@
   }
 
   &__icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
+    border-color: $white;
+    border: 2px solid $extra;
+    border-radius: 100%;
+    margin-right: 10px;
     position: relative;
-    margin-right: 12px;
-    display: flex;
-    align-items: center;
 
-    div {
-      width: 14px;
-      height: 14px;
-      border-color: $white;
-      border: 2px solid $extra;
-      border-radius: 100%;
-
-      &:before {
-        content: "";
-        height: 2px;
-        width: 7px;
-        background-color: $extra;
-        display: inline-block;
-        transform: rotate(45deg);
-        position: absolute;
-        top: 16px;
-        left: 11px;
-      }
+    &:before {
+      content: "";
+      height: 2px;
+      width: 7px;
+      background-color: $extra;
+      display: inline-block;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 11px;
+      left: 9px;
+      border-radius: 1px;
     }
   }
 }

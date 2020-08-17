@@ -1,30 +1,19 @@
-// const accordElement = document.querySelector('.answer');
-// const accordLink = document.querySelectorAll('.answer__acco-item');
+$(document).ready(function () {
+  let acc = document.getElementsByClassName("answer__acco-question")
+  let i
 
-// let accoLinkLength = accordLink.length;
+  for (i = 0; i < acc.length; i++) {
 
-// accordElement.addEventListener('click', function (e) {
-//   for (let i = 0; i < accoLinkLength; i++) {
-//     accordLink[i].classList.remove('answer__acco-item--active');
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("answer__active");
+      let panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
 
-//   }
-// });
+  }
 
-// for (let i = 0; i < accoLinkLength; i++) {
-//   accordLink[i].addEventListener('click', function(e) {
-//       e.preventDefault();
-//       e.stopPropagation();
-
-//       if (accordLink [i].classList.contains('answer__acco-item--active')){
-//         accordLink [i].classList.remove('answer__acco-item--active');
-
-//       } else {
-//           for (let i=0; i < accoLinkLength; i++) {
-//             accordLink[i].classList.remove('answer__acco-item--active'); 
-//           }
-//           accordLink[i].classList.add('answer__acco-item--active');
-
-//       }
-//   })
-
-// }
+});

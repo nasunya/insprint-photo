@@ -7,9 +7,15 @@
     text-align: center;
   }
 
+  &--center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__content {
     h1 {
-      padding: 124px 0px 24px 0px;
+      padding: 120px 0px 24px 0px;
       font-weight: 600;
       font-size: 48px;
       font-family: 'gilroy-semibold';
@@ -77,9 +83,6 @@
       margin-bottom: -3px;
     }
   }
-
-
-
 }
 
 .button--blue {
