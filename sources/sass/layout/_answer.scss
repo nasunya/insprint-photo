@@ -22,12 +22,6 @@
     position: relative;
   }
 
-  &__acco-info {
-    p {
-      padding: 0px 80px 25px 32px;
-    }
-  }
-
   &__acco-item {
     cursor: pointer;
 
@@ -44,6 +38,10 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s linear;
+
+    p {
+      padding: 0px 80px 25px 32px;
+    }
   }
 
   &__acco-question {
@@ -58,6 +56,7 @@
       right: 32px;
       top: 50%;
     }
+
     :before {
       content: "";
       width: 24px;
