@@ -17,14 +17,16 @@ for (i = 0; i < acc.length; i++) {
 
 };
 
-
-
+// Слайдер
 const left = document.querySelector("#left");
 const right = document.querySelector("#right");
 const items = document.querySelector("#items");
+const elements = document.querySelectorAll('.photo__item');
+const size = elements.length - 3;
+const maxRight = size * 33.3;
+
 
 const minRight = 0;
-const maxRight = 700;
 const step = 33.3;
 let currentRight = 0; //слайде при загрузке стр всегда вначале
 
@@ -38,7 +40,7 @@ right.addEventListener("click", function () {
     items.style.right = currentRight + "%";
   } else {
     currentRight = 0 // постоянная прокрутка
-    items.style.right = 0 //
+    items.style.right = 0
   };
 });
 left.addEventListener("click", function () {
@@ -51,3 +53,58 @@ left.addEventListener("click", function () {
     items.style.right = currentRight + "%";
   };
 });
+
+
+//Video
+
+const video = document.querySelector(".works__video-play");
+const videoBtn = document.querySelector(".works__play-btn");
+
+
+video.setAttribute("poster", "assets/img/bg-video.jpg");
+
+video.addEventListener("click", function () {
+
+  if (video.paused) {
+    videoBtn.style.display = 'none'
+    // video.removeAttribute("poster");
+  } else {
+    videoBtn.style.display = 'block'
+  }
+}, false);
+
+videoBtn.addEventListener('click', function () {
+  if (video.paused) {
+    video.play();
+    videoBtn.style.display = 'none';
+
+  } else {
+    video.pause();
+    videoBtn.style.display = 'block';
+
+  }
+}, false);
+
+// video.addEventListener('click', function () {
+//   if (video.paused) {
+//     video.removeAttribute("poster");
+
+//   } else {
+//     video.setAttribute("poster", "assets/img/bg-video.jpg");
+
+//   }
+// }, false);
+
+
+//works 
+
+
+const greyButtons = document.querySelectorAll(".works__points--grey");
+
+for (const button of greyButtons) {
+  button.addEventListener('click', function () {
+    greyButtons.forEach(i => i.classList.remove('works__points--active'));
+    this.classList.toggle('works__points--active');
+
+  });
+};

@@ -21,32 +21,40 @@
     justify-content: center;
     text-align: center;
 
+    &--grey::after {
+      content: "";
+      display: block;
+      width: 100%;
+      background-color: $grey;
+      height: 1px;
+      margin-top: 17px;
+    }
+
     span {
       width: 50%;
       cursor: pointer;
-
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        background-color: $grey;
-        height: 2px;
-        margin-top: 17px;
-      }
-
-      &:hover {
-        color: $extra;
-        transition: .5s;
-      }
-
-      &:hover::after {
-        background-color: $extra;
-        transition: .5s;
-      }
     }
   }
 
-  &__steps {
+  &__points--active {
+    color: $extra;
+    transition: .5s;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      background-color: $extra;
+      height: 2px;
+      margin-top: 17px;
+    }
+  }
+
+  &__steps-two {
+    display: none;
+  }
+
+  &__steps-one {
     display: flex;
   }
 
@@ -84,14 +92,14 @@
     outline: none;
   }
 
-  &__video--style {
+  &__video-play {
     max-width: 100%;
     width: 1136px;
     border-radius: 24px;
     min-height: 639px
   }
 
-  &__play {
+  &__play-btn {
     position: absolute;
     top: 0;
     top: 50%;

@@ -1,5 +1,9 @@
 .photo {
 
+  &__wrap {
+    position: relative;
+  }
+
   &__container {
     width: 1136px;
   }
@@ -7,14 +11,14 @@
   &__desc {
     margin-top: 64px;
     overflow: hidden;
-    position: relative;
+    display: flex;
   }
 
   &__list {
     display: flex;
-    width: 100%;
     transition: right 0.3s;
     will-change: right;
+    position: relative;
 
 
     :nth-child(1) {
