@@ -6,6 +6,22 @@
 
   &__container {
     width: 1136px;
+
+    @include big-tablets {
+      width:1100px;
+    }
+
+    @include tablets {
+      width: 800px;
+    }
+
+    @include phones {
+      width:  480px;
+    }
+
+    @include small-phones {
+      width:  375px;
+    }
   }
 
   &__desc {
