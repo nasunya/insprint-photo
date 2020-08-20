@@ -19,6 +19,7 @@
     transition: right 0.3s;
     will-change: right;
     position: relative;
+    margin-bottom: 20px;
 
 
     :nth-child(1) {
@@ -212,3 +213,4 @@
     }
   }
 }
+

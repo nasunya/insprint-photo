@@ -28,6 +28,10 @@
       transition: .5s;
     }
   }
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .search {

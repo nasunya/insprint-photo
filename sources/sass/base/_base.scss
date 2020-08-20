@@ -78,7 +78,11 @@ textarea {
 .container {
     margin: 0 auto;
     width: 100%;
-    max-width: 1288px;
+    max-width: 1136px;
+
+    @include big-tablets {
+        padding: 0px 30px;
+    }
 }
 
 ul,
@@ -97,8 +101,20 @@ a {
     font-size: 48px;
     text-align: center;
     font-family: 'gilroy-semibold';
+
+    @include tablets {
+        font-size: 40px;
+    }
+
+    @include phones {
+        font-size: 30px;
+    }
 }
 
 .section {
     padding: 120px 0px;
+
+    @include tablets {
+        padding: 80px 0px;
+    }
 }

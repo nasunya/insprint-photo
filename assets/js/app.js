@@ -56,20 +56,16 @@ left.addEventListener("click", function () {
 
 
 //Video
-
 const video = document.querySelector(".works__video-play");
 const videoBtn = document.querySelector(".works__play-btn");
 
-
-video.setAttribute("poster", "assets/img/bg-video.jpg");
-
 video.addEventListener("click", function () {
-
   if (video.paused) {
     videoBtn.style.display = 'none'
-    // video.removeAttribute("poster");
+    video.removeAttribute("poster", "assets/img/bg-video.jpg");
   } else {
     videoBtn.style.display = 'block'
+    video.setAttribute("poster", "assets/img/bg-video.jpg");
   }
 }, false);
 
@@ -108,3 +104,23 @@ for (const button of greyButtons) {
 
   });
 };
+
+
+const photogBtn = document.querySelector(".works__point-photog");
+const amateurBtn = document.querySelector(".works__point-amateur");
+const amateurBlock = document.querySelector(".works__amateur");
+const photogBlock = document.querySelector(".works__photog");
+
+
+
+amateurBtn.addEventListener("click", function () {
+  amateurBlock.style.display = "flex";
+  photogBlock.style.display = "none";
+});
+
+
+photogBtn.addEventListener("click", function () {
+  amateurBtn.classList.remove('works__points-active');
+  photogBlock.style.display = "flex";
+  amateurBlock.style.display = "none";
+});

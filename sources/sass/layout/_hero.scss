@@ -20,6 +20,15 @@
       font-weight: 600;
       font-size: 48px;
       font-family: 'gilroy-semibold';
+
+      @include tablets {
+        font-size: 40px;
+      }
+
+      @include phones {
+        font-size: 30px;
+        padding: 70px 0px 24px 0px;
+      }
     }
 
     p {
@@ -27,11 +36,23 @@
       font-weight: 500;
       font-size: 24px;
       color: $black-light;
+
+      @include tablets {
+        font-size: 20px;
+      }
+
+      @include phones {
+        font-size: 16px;
+      }
     }
   }
 
   &__button {
     margin-bottom: 89px;
+
+    @include phones {
+      margin-bottom: 60px;
+    }
 
     button {
       border-radius: 8px;
@@ -90,4 +111,10 @@
   margin-right: 16px;
   background: $extra;
   color: $white;
+
+  @include phones {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
 }

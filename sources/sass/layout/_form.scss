@@ -7,15 +7,34 @@
   width: 100%;
   display: flex;
 
+  @include tablets {
+    flex-direction: column;
+  }
+
   &__left {
     width: 50%;
     padding: 120px 159px 120px 150px;
     background-color: $beige;
+
+    @include big-tablets {
+      padding: 60px 89px 60px 80px;
+    }
+
+    @include tablets {
+      width: 100%;
+      padding: 60px 89px 60px 80px;
+    }
+
   }
 
   &__right {
     width: 50%;
     background: url(../img/photographer.jpg) center center / cover no-repeat;
+
+    @include tablets {
+      width: 100%;
+      min-height: 400px;
+    }
   }
 
   &__button {
