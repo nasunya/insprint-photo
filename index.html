@@ -236,7 +236,7 @@
         </div>
       </div>
     </section>
-    <!-- <section class="section photo">
+    <section class="section photo">
       <div class="container photo__container">
         <div class="title">5000 фотографов уже с нами</div>
         <div class="photo__wrap">
@@ -394,16 +394,16 @@
           </a>
         </div>
       </div>
-    </section> -->
+    </section>
     <section class="form">
       <form class="form__left" id="myForm">
         <div class="title title--form">Хочешь у нас разместиться?</div>
-        <label for="" class="form__email">
-          <input type="email" placeholder="Ваша почта" required>
-          <div class="error"></div>
+        <label for="" class="form__email form-control">
+          <input type="email" placeholder="Ваша почта" required id="txtEmail" >
+          <small>Error message</small>
         </label>
         <div class="form__button">
-          <button id="send">Хочу разместиться</button>
+          <button id="send" onclick="checkEmail()">Хочу разместиться</button>
         </div>
         <div class="form__desc">
           Нажимая на кнопку, вы соглашаетесь с условиями обработки

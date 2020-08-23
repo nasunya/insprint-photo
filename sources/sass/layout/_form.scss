@@ -24,7 +24,6 @@
       width: 100%;
       padding: 60px 89px 60px 80px;
     }
-
   }
 
   &__right {
@@ -38,7 +37,6 @@
   }
 
   &__button {
-
     button {
       border-radius: 8px;
       cursor: pointer;
@@ -52,20 +50,18 @@
         background: $white;
         color: $extra;
         box-shadow: $box;
-        transition: .5s;
+        transition: 0.5s;
       }
     }
   }
 
   &__email {
-
     input {
       width: 100%;
       border: 2px solid $grey-light;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 24px;
-
     }
   }
 
@@ -81,11 +77,47 @@
   }
 }
 
-
 input[type="text"],
 input[type="submit"],
 input[type="button"],
 select,
 textarea {
   outline-color: $extra;
+}
+
+.form-control small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+#alert {
+  width: 280px;
+  max-height: 70px;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  margin-left: -140px;
+}
+
+#red {
+  background-color: #D94D3F;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #ffffff;
+}
+
+#black {
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #ffffff;
 }

@@ -17,42 +17,42 @@ for (i = 0; i < acc.length; i++) {
 
 };
 
-// // Слайдер
-// const left = document.querySelector("#left");
-// const right = document.querySelector("#right");
-// const items = document.querySelector("#items");
-// const elements = document.querySelectorAll('.photo__item');
-// const size = elements.length - 3;
-// const maxRight = size * 33.3;
+// Слайдер
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
+const items = document.querySelector("#items");
+const elements = document.querySelectorAll('.photo__item');
+const size = elements.length - 3;
+const maxRight = size * 33.3;
 
 
-// const minRight = 0;
-// const step = 33.3;
-// let currentRight = 0; //слайде при загрузке стр всегда вначале
+const minRight = 0;
+const step = 33.3;
+let currentRight = 0; //слайде при загрузке стр всегда вначале
 
-// items.style.right = currentRight;
+items.style.right = currentRight;
 
 
-// right.addEventListener("click", function () {
-//   event.preventDefault();
-//   if (currentRight < maxRight) {
-//     currentRight += step; //currentRight      +step
-//     items.style.right = currentRight + "%";
-//   } else {
-//     currentRight = 0 // постоянная прокрутка
-//     items.style.right = 0
-//   };
-// });
-// left.addEventListener("click", function () {
-//   event.preventDefault();
-//   if (currentRight > minRight) {
-//     currentRight -= step;
-//     items.style.right = currentRight + "%";
-//   } else {
-//     currentRight = maxRight;
-//     items.style.right = currentRight + "%";
-//   };
-// });
+right.addEventListener("click", function () {
+  event.preventDefault();
+  if (currentRight < maxRight) {
+    currentRight += step; //currentRight      +step
+    items.style.right = currentRight + "%";
+  } else {
+    currentRight = 0 // постоянная прокрутка
+    items.style.right = 0
+  };
+});
+left.addEventListener("click", function () {
+  event.preventDefault();
+  if (currentRight > minRight) {
+    currentRight -= step;
+    items.style.right = currentRight + "%";
+  } else {
+    currentRight = maxRight;
+    items.style.right = currentRight + "%";
+  };
+});
 
 
 //Video
@@ -138,37 +138,89 @@ jsMenu.onclick = function () {
 
 
 
-const myForm = document.querySelector("#myForm");
-const send = document.querySelector("#send");
+// const form = document.querySelector("#myForm");
+// const email = document.getElementById('email');
 
-send.addEventListener("click", event => {
+
+// form.addEventListener('submit', e => {
+//   e.preventDefault();
+
+//   checkInputs();
+// });
+
+// function checkInputs() {
+//   // trim to remove the whitespaces
+
+//   const emailValue = email.value.trim();
+
+//   if (emailValue === '') {
+//     setErrorFor(email, 'Email cannot be blank');
+//   } else if (!isEmail(emailValue)) {
+//     setErrorFor(email, 'Not a valid email');
+//   } else {
+//     setSuccessFor(email);
+//   }
+
+// }
+
+// function isEmail(email) {
+//   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+// }
+
+
+
+
+
+function checkEmail() {
+
+  var email = document.getElementById('txtEmail');
+  var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   event.preventDefault();
-
-  if (validateForm(myForm)) {
-    console.log('все ок')
-  }
-});
-
-function validateForm(form) {
-  let valid = true;
-
-  if (!validateField(form.elements.email)) {
-    valid = false;
-  }
-
-  return valid;
-};
-
-
-function validateField(field) {
-  if (!field.checkValidity()) {
-    field.nextElementSibling.textContent = field.validationMessage;
-
-    return false;
+  if (!filter.test(email.value)) {
+    alert("Пожалуйста, введите верный email");
   } else {
-    field.nextElementSibling.textContent = "";
+    alert("Спасибо! Скоро мы с Вами свяжемся!");
 
-    return true;
   }
-
 }
+
+
+
+
+
+
+
+
+// const send = document.querySelector("#send");
+
+// send.addEventListener("click", event => {
+//   event.preventDefault();
+
+//   if (validateForm(myForm)) {
+//     console.log('все ок')
+//   }
+// });
+
+// function validateForm(form) {
+//   let valid = true;
+
+//   if (!validateField(form.elements.email)) {
+//     valid = false;
+//   }
+
+//   return valid;
+// };
+
+
+// function validateField(field) {
+//   if (!field.checkValidity()) {
+//     field.nextElementSibling.textContent = field.validationMessage;
+
+//     return false;
+//   } else {
+//     field.nextElementSibling.textContent = "";
+
+//     return true;
+//   }
+
+// }
