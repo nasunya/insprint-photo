@@ -17,42 +17,42 @@ for (i = 0; i < acc.length; i++) {
 
 };
 
-// Слайдер
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const items = document.querySelector("#items");
-const elements = document.querySelectorAll('.photo__item');
-const size = elements.length - 3;
-const maxRight = size * 33.3;
+// // Слайдер
+// const left = document.querySelector("#left");
+// const right = document.querySelector("#right");
+// const items = document.querySelector("#items");
+// const elements = document.querySelectorAll('.photo__item');
+// const size = elements.length - 3;
+// const maxRight = size * 33.3;
 
 
-const minRight = 0;
-const step = 33.3;
-let currentRight = 0; //слайде при загрузке стр всегда вначале
+// const minRight = 0;
+// const step = 33.3;
+// let currentRight = 0; //слайде при загрузке стр всегда вначале
 
-items.style.right = currentRight;
+// items.style.right = currentRight;
 
 
-right.addEventListener("click", function () {
-  event.preventDefault();
-  if (currentRight < maxRight) {
-    currentRight += step; //currentRight      +step
-    items.style.right = currentRight + "%";
-  } else {
-    currentRight = 0 // постоянная прокрутка
-    items.style.right = 0
-  };
-});
-left.addEventListener("click", function () {
-  event.preventDefault();
-  if (currentRight > minRight) {
-    currentRight -= step;
-    items.style.right = currentRight + "%";
-  } else {
-    currentRight = maxRight;
-    items.style.right = currentRight + "%";
-  };
-});
+// right.addEventListener("click", function () {
+//   event.preventDefault();
+//   if (currentRight < maxRight) {
+//     currentRight += step; //currentRight      +step
+//     items.style.right = currentRight + "%";
+//   } else {
+//     currentRight = 0 // постоянная прокрутка
+//     items.style.right = 0
+//   };
+// });
+// left.addEventListener("click", function () {
+//   event.preventDefault();
+//   if (currentRight > minRight) {
+//     currentRight -= step;
+//     items.style.right = currentRight + "%";
+//   } else {
+//     currentRight = maxRight;
+//     items.style.right = currentRight + "%";
+//   };
+// });
 
 
 //Video
