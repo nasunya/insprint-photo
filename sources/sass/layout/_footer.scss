@@ -93,6 +93,12 @@
       margin-bottom: 0px;
     }
   }
+
+  &__menu.nav {
+    @include tablets {
+      display: none;
+    }
+  }
 }
 
 .contact__mail {

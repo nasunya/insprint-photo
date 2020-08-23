@@ -120,7 +120,7 @@ amateurBtn.addEventListener("click", function () {
 
 
 photogBtn.addEventListener("click", function () {
-  amateurBtn.classList.remove('works__points-active');
+  amateurBtn.classList.remove('works__points-active', 'works__active-amateur');
   photogBlock.style.display = "flex";
   amateurBlock.style.display = "none";
 });
@@ -135,3 +135,40 @@ jsMenu.onclick = function () {
   this.classList.contains('burger__opened');
   nav.classList.toggle("burger__menu--active");
 };
+
+
+
+const myForm = document.querySelector("#myForm");
+const send = document.querySelector("#send");
+
+send.addEventListener("click", event => {
+  event.preventDefault();
+
+  if (validateForm(myForm)) {
+    console.log('все ок')
+  }
+});
+
+function validateForm(form) {
+  let valid = true;
+
+  if (!validateField(form.elements.email)) {
+    valid = false;
+  }
+
+  return valid;
+};
+
+
+function validateField(field) {
+  if (!field.checkValidity()) {
+    field.nextElementSibling.textContent = field.validationMessage;
+
+    return false;
+  } else {
+    field.nextElementSibling.textContent = "";
+
+    return true;
+  }
+
+}

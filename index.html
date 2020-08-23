@@ -105,7 +105,7 @@
       <div class="container works__container">
         <div class="title">Как это работает?</div>
         <div class="works__points">
-          <span class="works__point-amateur works__points-active works__points--grey ">Для фотолюбителей</span>
+          <span class="works__point-amateur works__active-amateur works__points--grey ">Для фотолюбителей</span>
           <span class="works__points--grey works__point-photog works__points--grey">Для фотографов</span>
         </div>
         <div class="works__steps">
@@ -236,7 +236,7 @@
         </div>
       </div>
     </section>
-    <section class="section photo">
+    <!-- <section class="section photo">
       <div class="container photo__container">
         <div class="title">5000 фотографов уже с нами</div>
         <div class="photo__wrap">
@@ -394,21 +394,22 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="form">
-      <div class="form__left">
+      <form class="form__left" id="myForm">
         <div class="title title--form">Хочешь у нас разместиться?</div>
-        <label for="" class="form__input">
-          <input type="text" placeholder="Ваша почта">
+        <label for="" class="form__email">
+          <input type="email" placeholder="Ваша почта" required>
+          <div class="error"></div>
         </label>
         <div class="form__button">
-          <button>Хочу разместиться</button>
+          <button id="send">Хочу разместиться</button>
         </div>
         <div class="form__desc">
           Нажимая на кнопку, вы соглашаетесь с условиями обработки
           <a>персональных данных</a>
         </div>
-      </div>
+      </form>
       <div class="form__right"></div>
   </div>
   </section>
@@ -458,8 +459,8 @@
         </p>
       </div>
       <div class="footer__col footer__menu">
-        <nav class="nav">
-          <ul class=" footer__nav">
+        <nav class="nav footer__menu">
+          <ul class="footer__nav nav__list">
             <li class="nav__item">
               <a href="#" class="nav__link">Как это работает?</a>
             </li>
@@ -523,7 +524,6 @@
     </div>
     <div class="nav burger__nav">
       <ul class="nav__list">
-
         <li class="nav__item">
           <a class="search__burger">
             <div class="search__icon">

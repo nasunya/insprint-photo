@@ -5,7 +5,7 @@ $f_family: "gilroy-regular";
 
 //Breakpoint
 $big-tablets: 1100px;
-$tablets: 800px;
+$tablets: 890px;
 $phones : 480px;
 $small-phones : 375px;
 
@@ -25,14 +25,14 @@ $small-phones : 375px;
   @media (max-width: $phones) {
     @content;
   }
-  
+
 }
 
 @mixin small-phones {
   @media (max-width: $small-phones) {
     @content;
   }
-  
+
 }
 
 //Colors

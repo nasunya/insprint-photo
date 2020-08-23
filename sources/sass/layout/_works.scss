@@ -22,7 +22,7 @@
     text-align: center;
 
     @include small-phones {
-      margin-bottom:40px;
+      margin-bottom: 40px;
     }
 
     &--grey::after {
@@ -37,11 +37,12 @@
     span {
       width: 50%;
       cursor: pointer;
+
       @include small-phones {
-        margin-bottom:20px;
+        margin-bottom: 20px;
 
         &:last-child {
-          margin-bottom:0px;
+          margin-bottom: 0px;
         }
       }
     }
@@ -54,10 +55,6 @@
       width: 70%;
     }
 
-    // @include phones {
-    //   width: 73%;
-    // }
-
     @include phones {
       display: flex;
       flex-direction: column;
@@ -65,10 +62,24 @@
       align-items: center;
     }
   }
-    
+
 
 
   &__points--active {
+    color: $extra;
+    transition: .5s;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      background-color: $extra;
+      height: 2px;
+      margin-top: 17px;
+    }
+  }
+
+  &__active-amateur {
     color: $extra;
     transition: .5s;
 
@@ -190,6 +201,12 @@
         width: 55px;
         height: 55px;
       }
+    }
+  }
+
+  &__point-amateur {
+    @include phones {
+      margin-bottom: 20px;
     }
   }
 }
