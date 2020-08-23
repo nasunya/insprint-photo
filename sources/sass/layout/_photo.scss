@@ -16,11 +16,11 @@
     }
 
     @include phones {
-      width:  480px;
+      width: 480px;
     }
 
     @include small-phones {
-      width:  375px;
+      width: 375px;
     }
   }
 
