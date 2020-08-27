@@ -17,43 +17,6 @@ for (i = 0; i < acc.length; i++) {
 
 };
 
-// Слайдер
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const items = document.querySelector("#items");
-const elements = document.querySelectorAll('.photo__item');
-const size = elements.length - 3;
-const maxRight = size * 33.3;
-
-
-const minRight = 0;
-const step = 33.3;
-let currentRight = 0; //слайде при загрузке стр всегда вначале
-
-items.style.right = currentRight;
-
-
-right.addEventListener("click", function () {
-  event.preventDefault();
-  if (currentRight < maxRight) {
-    currentRight += step; //currentRight      +step
-    items.style.right = currentRight + "%";
-  } else {
-    currentRight = 0 // постоянная прокрутка
-    items.style.right = 0
-  };
-});
-left.addEventListener("click", function () {
-  event.preventDefault();
-  if (currentRight > minRight) {
-    currentRight -= step;
-    items.style.right = currentRight + "%";
-  } else {
-    currentRight = maxRight;
-    items.style.right = currentRight + "%";
-  };
-});
-
 
 //Video
 const video = document.querySelector(".works__video-play");
@@ -138,49 +101,49 @@ jsMenu.onclick = function () {
 
 
 
-// const form = document.querySelector("#myForm");
-// const email = document.getElementById('email');
+//Form
+const myForm = document.querySelector("#myForm");
+const send = document.querySelector("#send");
 
-
-// form.addEventListener('submit', e => {
-//   e.preventDefault();
-
-//   checkInputs();
-// });
-
-// function checkInputs() {
-//   // trim to remove the whitespaces
-
-//   const emailValue = email.value.trim();
-
-//   if (emailValue === '') {
-//     setErrorFor(email, 'Email cannot be blank');
-//   } else if (!isEmail(emailValue)) {
-//     setErrorFor(email, 'Not a valid email');
-//   } else {
-//     setSuccessFor(email);
-//   }
-
-// }
-
-// function isEmail(email) {
-//   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-// }
-
-
-
-
-
-function checkEmail() {
-
-  var email = document.getElementById('txtEmail');
-  var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+send.addEventListener("click", event => {
   event.preventDefault();
-  if (!filter.test(email.value)) {
-    alert("Пожалуйста, введите верный email");
-  } else {
-    alert("Спасибо! Скоро мы с Вами свяжемся!");
 
+  if (validateForm(myForm)) {
+    const data = {
+      name: myForm.elements.email.value,
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', ' https://webdev-api.loftschool.com/sendmail');
+    xhr.send(JSON.stringify(data));
+    xhr.addEventListener('load', () => {
+      if (xhr.response.status) {
+        console.log('все ок');
+      }
+    });
+  }
+});
+
+function validateForm(form) {
+  let valid = true;
+
+  if (!validateField(form.elements.email)) {
+    valid = false;
+  }
+  return valid;
+};
+
+
+function validateField(field) {
+  if (!field.checkValidity()) {
+    field.nextElementSibling.textContent = field.validationMessage;
+
+    return false;
+  } else {
+    field.nextElementSibling.textContent = "";
+
+    return true;
   }
 }
 
@@ -189,38 +152,131 @@ function checkEmail() {
 
 
 
+// Слайдер
 
 
-// const send = document.querySelector("#send");
+class SliderCarousel {
+  constructor({
+    main,
+    wrap,
+    next,
+    prev,
+    infinity = false,
+    position = 0,
+    slidersToShow = 3,
+    responsive = [],
+  }) {
+    this.main = document.querySelector(main);
+    this.wrap = document.querySelector(wrap);
+    this.sliders = document.querySelector(wrap).children;
+    this.prev = document.querySelector(prev);
+    this.next = document.querySelector(next);
+    this.slidersToShow = slidersToShow;
 
-// send.addEventListener("click", event => {
-//   event.preventDefault();
+    this.options = {
+      position,
+      infinity,
+      widthSlide: Math.floor(100 / this.slidersToShow),
+    };
+    this.responsive = responsive;
+  }
 
-//   if (validateForm(myForm)) {
-//     console.log('все ок')
-//   }
-// });
+  init() {
+    // console.log(this.sliders);
+    this.addGloClass();
+    this.addstyle();
 
-// function validateForm(form) {
-//   let valid = true;
+    if (this.prev && this.next) {
+      this.controlSlider();
+    }
+    if (this.responsive) {
+      this.responsiveInit();
+    }
 
-//   if (!validateField(form.elements.email)) {
-//     valid = false;
-//   }
+  }
 
-//   return valid;
-// };
+  addGloClass() {
+    this.main.classList.add('glo-slider');
+    this.wrap.classList.add('glo-slider__wrap');
+
+    for (const item of this.sliders) {
+      item.classList.add('glo-slider__item');
+    }
+  }
+
+  addstyle() {
+    const style = document.createElement('style');
+    style.id = 'sliderCarousel-style';
+
+    style.textContent = `
+
+      .glo-slider__wrap {
+      display: flex;
+      transition: transform 0.5s;
+      will-change: transform;
+      width: 100%;
+    }
+    .glo-slider__item {
+      flex:0 0 ${this.options.widthSlide}% !important;
+      margin auto 0 !important;
+    }
+
+`
 
 
-// function validateField(field) {
-//   if (!field.checkValidity()) {
-//     field.nextElementSibling.textContent = field.validationMessage;
+    document.head.appendChild(style);
+  }
 
-//     return false;
-//   } else {
-//     field.nextElementSibling.textContent = "";
+  controlSlider() {
+    this.prev.addEventListener('click', this.prevSlider.bind(this));
+    this.next.addEventListener('click', this.nextSlider.bind(this));
+  }
 
-//     return true;
-//   }
+  prevSlider() {
+    if (this.options.infinity || this.options.position > 0) {
+      --this.options.position;
+      console.log(this.options.position);
+      if (this.options.position < 0) {
+        this.options.position = this.sliders.length - this.slidersToShow;
+      }
+      this.wrap.style.transform = `translateX(-${(this.options.position * this.options.widthSlide)}%)`;
+    }
+  }
 
-// }
+  nextSlider() {
+    if (this.options.infinity || this.options.position < this.sliders.length - this.slidersToShow) {
+      ++this.options.position;
+      console.log(this.options.position);
+      if (this.options.position > this.sliders.length - this.slidersToShow) {
+        this.options.position = 0;
+      }
+      this.wrap.style.transform = `translateX(-${(this.options.position * this.options.widthSlide)}%)`;
+
+    }
+  }
+
+  responsiveInit() {
+    const slidersToShowDerault = this.slidersToShow;
+    const allResponsive = this.responsive.map(item => item.breakpoint);
+    const maxResponse = Math.max(...allResponsive);
+
+    const checkResponsive = () => {
+      const widthWindow = document.documentElement.clientWidth;
+
+      if (widthWindow < maxResponse) {
+        for (let i = 0; i < allResponsive.length; i++) {
+          if (widthWindow < allResponsive[i]) {
+            this.slidersToShow = this.responsive[i].slidersToShow;
+            this.options.widthSlide = Math.floor(100 / this.slidersToShow);
+            this.addstyle();
+          }
+        }
+      };
+    };
+
+    checkResponsive();
+    window.addEventListener('resize', checkResponsive);
+
+  }
+
+}

@@ -5,29 +5,14 @@
   }
 
   &__container {
-    width: 1136px;
-
-    @include big-tablets {
-      width:1100px;
-    }
-
-    @include tablets {
-      width: 800px;
-    }
-
-    @include phones {
-      width: 480px;
-    }
-
-    @include small-phones {
-      width: 375px;
-    }
+    max-width: 1136px;
   }
 
   &__desc {
     margin-top: 64px;
     overflow: hidden;
     display: flex;
+    justify-content: center;
   }
 
   &__list {
@@ -36,24 +21,26 @@
     will-change: right;
     position: relative;
     margin-bottom: 20px;
+    margin-right: -44px;
 
-
-    :nth-child(1) {
-      margin-left: 0px;
+    @include phones {
+      margin-right: -24px;
     }
   }
 
   &__item {
-    margin-left: 29px;
     display: flex;
     justify-content: center;
-    display: flex;
     flex-direction: column;
+    border-radius: 16px;
+  }
+
+  &__item-wrap {
+    margin-right: 30px;
     box-shadow: $box;
     border-radius: 16px;
-    width: 33.3%;
-    min-width: 358px;
   }
+
 
   &__name {
     padding: 32px;
@@ -192,10 +179,13 @@
   }
 
   &__arrow-prew {
-    left: -32px;
+    left: -15px;
     top: 43%;
     box-shadow: -3px 2px 16px rgba(0, 0, 0, 0.08);
 
+    @include phones {
+      top: 40%;
+    }
 
     &:before {
       content: "";
@@ -211,10 +201,14 @@
   }
 
   &__arrow-next {
-    right: -32px;
+    right: -15px;
     top: 43%;
-    box-shadow: 3px 2px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 3px 2px 16px $box;
 
+
+    @include phones {
+      top: 40%;
+    }
 
     &:before {
       content: "";
@@ -229,4 +223,3 @@
     }
   }
 }
-
