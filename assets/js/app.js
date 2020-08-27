@@ -209,7 +209,9 @@ class SliderCarousel {
     style.id = 'sliderCarousel-style';
 
     style.textContent = `
-
+    .glo-slider {
+      overflow:hidden !important;
+    }
       .glo-slider__wrap {
       display: flex;
       transition: transform 0.5s;
