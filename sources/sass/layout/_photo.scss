@@ -46,6 +46,10 @@
     padding: 32px;
     position: relative;
 
+    @include tablets {
+      min-height: 149px;
+    }
+
     span {
       font-weight: 600;
       font-size: 24px;
