@@ -25,22 +25,17 @@ body {
     min-height: 100%;
     font-size: 16px;
     line-height: 1.3;
-    font-family: $f_base;
     margin: 0;
+    font-family: 'gilroy-regular';
+
 }
 
-body {
-    color: $text;
-    background: #fff;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
+
 
 a {
     @include transition (all 0.3s linear);
     outline: none;
-    color: $text;
+    color: $black-light;
 
     &:hover {
         text-decoration: none;
@@ -64,7 +59,6 @@ textarea {
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    outline: 0;
 }
 
 .clearfix:before,
@@ -79,4 +73,48 @@ textarea {
 
 .clearfix {
     zoom: 1;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1136px;
+
+    @include big-tablets {
+        padding: 0px 30px;
+    }
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    font-family: 'gilroy-semibold';
+
+    @include tablets {
+        font-size: 40px;
+    }
+
+    @include phones {
+        font-size: 30px;
+    }
+}
+
+.section {
+    padding: 120px 0px;
+
+    @include tablets {
+        padding: 80px 0px;
+    }
 }
