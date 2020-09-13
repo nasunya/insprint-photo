@@ -34,8 +34,12 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
-    "remove-svg-properties": "^0.3.3"
+    "remove-svg-properties": "^0.3.3",
+    "webpack-cli": "^3.3.12"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "webpack": "^4.44.1"
+  }
 }
