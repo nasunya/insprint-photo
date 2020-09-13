@@ -150,7 +150,6 @@
 
   &__video {
     position: relative;
-    outline: none;
   }
 
   &__video-play {
@@ -158,6 +157,7 @@
     width: 1136px;
     border-radius: 24px;
     height: 100%;
+    outline: none;
   }
 
   &__play-btn {

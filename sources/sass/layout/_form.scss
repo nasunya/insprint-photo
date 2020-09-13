@@ -58,10 +58,12 @@
   &__email {
     input {
       width: 100%;
-      border: 2px solid $grey-light;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 24px;
+      border: 2px solid $grey-light;
+      font-size: 18px;
+      font-family: $f_family;
     }
   }
 
@@ -89,4 +91,10 @@ input[type="button"],
 select,
 textarea {
   outline-color: $extra !important;
+}
+
+#txtEmail:focus {
+  outline: none;
+  border: 2px solid $extra;
+
 }

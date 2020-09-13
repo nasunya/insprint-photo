@@ -1,10 +1,9 @@
 // accordion
 
-let acc = document.getElementsByClassName("answer__acco-question")
-let i
+let acc = document.getElementsByClassName("answer__acco-question");
+let i;
 
 for (i = 0; i < acc.length; i++) {
-
   acc[i].addEventListener("click", function () {
     this.classList.toggle("answer__active");
     let panel = this.nextElementSibling;
@@ -14,98 +13,83 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   });
-
-};
-
+}
 
 //Video
+
 const video = document.querySelector(".works__video-play");
 const videoBtn = document.querySelector(".works__play-btn");
 
-video.addEventListener("click", function () {
-  if (video.paused) {
-    videoBtn.style.display = 'none'
-    video.removeAttribute("poster", "assets/img/bg-video.jpg");
-  } else {
-    videoBtn.style.display = 'block'
-    video.setAttribute("poster", "assets/img/bg-video.jpg");
-  }
-}, false);
+video.addEventListener(
+  "click",
+  function () {
+    if (video.paused) {
+      videoBtn.style.display = "none";
+      video.removeAttribute("poster", "assets/img/bg-video.jpg");
+    } else {
+      videoBtn.style.display = "block";
+      video.setAttribute("poster", "assets/img/bg-video.jpg");
+    }
+  },
+  false
+);
 
-videoBtn.addEventListener('click', function () {
-  if (video.paused) {
-    video.play();
-    videoBtn.style.display = 'none';
+videoBtn.addEventListener(
+  "click",
+  function () {
+    if (video.paused) {
+      video.play();
+      videoBtn.style.display = "none";
+    } else {
+      video.pause();
+      videoBtn.style.display = "block";
+    }
+  },
+  false
+);
 
-  } else {
-    video.pause();
-    videoBtn.style.display = 'block';
-
-  }
-}, false);
-
-// video.addEventListener('click', function () {
-//   if (video.paused) {
-//     video.removeAttribute("poster");
-
-//   } else {
-//     video.setAttribute("poster", "assets/img/bg-video.jpg");
-
-//   }
-// }, false);
-
-
-//works 
-
+//works
 
 const greyButtons = document.querySelectorAll(".works__points--grey");
 
 for (const button of greyButtons) {
-  button.addEventListener('click', function () {
-    greyButtons.forEach(i => i.classList.remove('works__points--active'));
-    this.classList.toggle('works__points--active');
-
+  button.addEventListener("click", function () {
+    greyButtons.forEach((i) => i.classList.remove("works__points--active"));
+    this.classList.toggle("works__points--active");
   });
-};
-
+}
 
 const photogBtn = document.querySelector(".works__point-photog");
 const amateurBtn = document.querySelector(".works__point-amateur");
 const amateurBlock = document.querySelector(".works__amateur");
 const photogBlock = document.querySelector(".works__photog");
 
-
-
 amateurBtn.addEventListener("click", function () {
   amateurBlock.style.display = "flex";
   photogBlock.style.display = "none";
 });
 
-
 photogBtn.addEventListener("click", function () {
-  amateurBtn.classList.remove('works__points-active', 'works__active-amateur');
+  amateurBtn.classList.remove("works__points-active", "works__active-amateur");
   photogBlock.style.display = "flex";
   amateurBlock.style.display = "none";
 });
 
-
-const jsMenu = document.querySelector(".burger__btn")
-const nav = document.querySelector(".burger__menu")
-
+const jsMenu = document.querySelector(".burger__btn");
+const nav = document.querySelector(".burger__menu");
 
 jsMenu.onclick = function () {
-  this.classList.toggle('burger__opened');
-  this.classList.contains('burger__opened');
+  this.classList.toggle("burger__opened");
+  this.classList.contains("burger__opened");
   nav.classList.toggle("burger__menu--active");
 };
 
-
-
 //Form
+
 const myForm = document.querySelector("#myForm");
 const send = document.querySelector("#send");
 
-send.addEventListener("click", event => {
+send.addEventListener("click", (event) => {
   event.preventDefault();
 
   if (validateForm(myForm)) {
@@ -114,12 +98,12 @@ send.addEventListener("click", event => {
     };
 
     const xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.open('POST', ' https://webdev-api.loftschool.com/sendmail');
+    xhr.responseType = "json";
+    xhr.open("POST", " https://webdev-api.loftschool.com/sendmail");
     xhr.send(JSON.stringify(data));
-    xhr.addEventListener('load', () => {
+    xhr.addEventListener("load", () => {
       if (xhr.response.status) {
-        console.log('все ок');
+        console.log("все ок");
       }
     });
   }
@@ -132,8 +116,7 @@ function validateForm(form) {
     valid = false;
   }
   return valid;
-};
-
+}
 
 function validateField(field) {
   if (!field.checkValidity()) {
@@ -147,13 +130,7 @@ function validateField(field) {
   }
 }
 
-
-
-
-
-
 // Слайдер
-
 
 class SliderCarousel {
   constructor({
@@ -192,21 +169,20 @@ class SliderCarousel {
     if (this.responsive) {
       this.responsiveInit();
     }
-
   }
 
   addGloClass() {
-    this.main.classList.add('glo-slider');
-    this.wrap.classList.add('glo-slider__wrap');
+    this.main.classList.add("glo-slider");
+    this.wrap.classList.add("glo-slider__wrap");
 
     for (const item of this.sliders) {
-      item.classList.add('glo-slider__item');
+      item.classList.add("glo-slider__item");
     }
   }
 
   addstyle() {
-    const style = document.createElement('style');
-    style.id = 'sliderCarousel-style';
+    const style = document.createElement("style");
+    style.id = "sliderCarousel-style";
 
     style.textContent = `
     .glo-slider {
@@ -223,15 +199,14 @@ class SliderCarousel {
       margin auto 0 !important;
     }
 
-`
-
+`;
 
     document.head.appendChild(style);
   }
 
   controlSlider() {
-    this.prev.addEventListener('click', this.prevSlider.bind(this));
-    this.next.addEventListener('click', this.nextSlider.bind(this));
+    this.prev.addEventListener("click", this.prevSlider.bind(this));
+    this.next.addEventListener("click", this.nextSlider.bind(this));
   }
 
   prevSlider() {
@@ -241,25 +216,31 @@ class SliderCarousel {
       if (this.options.position < 0) {
         this.options.position = this.sliders.length - this.slidersToShow;
       }
-      this.wrap.style.transform = `translateX(-${(this.options.position * this.options.widthSlide)}%)`;
+      this.wrap.style.transform = `translateX(-${
+        this.options.position * this.options.widthSlide
+      }%)`;
     }
   }
 
   nextSlider() {
-    if (this.options.infinity || this.options.position < this.sliders.length - this.slidersToShow) {
+    if (
+      this.options.infinity ||
+      this.options.position < this.sliders.length - this.slidersToShow
+    ) {
       ++this.options.position;
       console.log(this.options.position);
       if (this.options.position > this.sliders.length - this.slidersToShow) {
         this.options.position = 0;
       }
-      this.wrap.style.transform = `translateX(-${(this.options.position * this.options.widthSlide)}%)`;
-
+      this.wrap.style.transform = `translateX(-${
+        this.options.position * this.options.widthSlide
+      }%)`;
     }
   }
 
   responsiveInit() {
     const slidersToShowDerault = this.slidersToShow;
-    const allResponsive = this.responsive.map(item => item.breakpoint);
+    const allResponsive = this.responsive.map((item) => item.breakpoint);
     const maxResponse = Math.max(...allResponsive);
 
     const checkResponsive = () => {
@@ -273,12 +254,37 @@ class SliderCarousel {
             this.addstyle();
           }
         }
-      };
+      }
     };
 
     checkResponsive();
-    window.addEventListener('resize', checkResponsive);
-
+    window.addEventListener("resize", checkResponsive);
   }
-
 }
+
+const options = {
+  main: ".photo__desc",
+  wrap: ".photo__list",
+  prev: "#left",
+  next: "#right",
+  slidersToShow: 3,
+  infinity: true,
+
+  responsive: [
+    {
+      breakpoint: 1100,
+      slidersToShow: 3,
+    },
+    {
+      breakpoint: 890,
+      slidersToShow: 2,
+    },
+    {
+      breakpoint: 480,
+      slidersToShow: 1,
+    },
+  ],
+};
+
+const carousel = new SliderCarousel(options);
+carousel.init();
